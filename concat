@@ -1,0 +1,8 @@
+s1="My"
+s2="name"
+s3="is"
+s4="Athulya"
+s5="Saji"
+concat_string=paste(s1,s2,s3,s4,s5)
+concat_string
+nchar(concat_string)
