@@ -1,0 +1,6 @@
+n=4
+range=1:10
+for(i in range){
+  result=n*i
+  print(result)
+}
