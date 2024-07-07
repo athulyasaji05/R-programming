@@ -1,0 +1,59 @@
+install.packages("dplyr")
+library(dplyr)
+
+install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(data=mtcars)+labs(title="mtcars plot")
+ggplot(data=mtcars,aes(x=hp,y=mpg))+labs(title="mcars plot")
+
+#dots
+ggplot(data=mtcars,aes(x=hp,y=mpg,col=disp))+
+  geom_point()+
+  labs(title = "Miles per Gallon vs Horsepower",
+       x = "Horsepower",
+       y = "Miles per Gallon")
+
+ggplot(data = mtcars, aes(x = hp, y = mpg, size = disp)) +
+  geom_point() +
+  labs(title = "Miles per Gallon vs Horsepower",
+       x = "Horsepower",
+       y = "Miles per Gallon")
+
+ggplot(data = mtcars, aes(x = hp, y = mpg, col = factor(cyl),
+                          shape = factor(am))) +geom_point() +
+  labs(title = "Miles per Gallon vs Horsepower",
+       x = "Horsepower",
+       y = "Miles per Gallon")
+
+#histogram
+ggplot(data=mtcars,aes(x=hp))+
+  geom_histogram(binwidth=5)+
+  labs(title="Histogram of Horse Power",
+       x="Horsepower",
+       y="Count")
+
+data(iris)
+head(iris)
+
+#scatter plot
+df=data.frame(iris)
+qplot(Sepal.Length,Sepal.Width,data=iris,colour=Species,
+      main="scatterplot using qplot()",shape="Species",
+      xlab="Length",ylab="width")
+
+#barplot
+qplot(Sepal.Length,data=iris,
+      main="barplot using qplot()",
+      xlab="Length")
+
+#violinplot
+qplot(Species,Sepal.Width,data=iris,colour=Species,
+      main="ViolinPlot using qplot()",geom="violin",
+      xlab="Species",ylab="Width")
+
+#boxplot
+qplot(mapping=aes(x=Species,y=Sepal.Length),data=iris,
+      main="boxplot using qplot()",geom="boxplot",
+      xlab="Species",ylab="Sepal.Length")
+
