@@ -1,0 +1,9 @@
+data(mtcars)
+car_brands <- sapply(strsplit(rownames(mtcars), " "), `[`, 1)
+car_brand_freq <- table(car_brands)
+barplot(car_brand_freq, 
+        main = "Frequency of Different Car Brands in the Dataset",
+        xlab = "Car Brands", 
+        ylab = "Frequency", 
+        col = "blue", 
+        las = 2)
