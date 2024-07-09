@@ -1,0 +1,10 @@
+data(iris)
+colors <- c("setosa" = "red", "versicolor" = "green", "virginica" = "blue")
+plot(iris$Sepal.Length, iris$Sepal.Width, 
+     col = colors[iris$Species], 
+     pch = 19,
+     xlab = "Sepal Length", 
+     ylab = "Sepal Width",
+     main = "Sepal Length vs Sepal Width")
+legend("topright", legend = levels(iris$Species), 
+       col = colors, pch = 19)
