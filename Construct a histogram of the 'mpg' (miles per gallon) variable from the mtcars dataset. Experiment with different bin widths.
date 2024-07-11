@@ -1,0 +1,13 @@
+data(mtcars)
+hist(mtcars$mpg, 
+     main = "Histogram of Miles Per Gallon (mpg)", 
+     xlab = "Miles Per Gallon (mpg)", 
+     col = "lightblue", 
+     border = "black")
+ 
+hist(mtcars$mpg, 
+     breaks = 20, 
+     main = "Histogram of Miles Per Gallon (mpg) with 20 Bins", 
+     xlab = "Miles Per Gallon (mpg)", 
+     col = "lightgreen", 
+     border = "black")
