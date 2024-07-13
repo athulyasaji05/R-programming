@@ -1,0 +1,18 @@
+data("Titanic")
+titanic_df <- as.data.frame(Titanic)
+survival_counts <- aggregate(Freq ~ Survived, data = titanic_df, sum)
+class_counts <- aggregate(Freq ~ Class, data = titanic_df, sum)
+par(mfrow = c(1, 2))
+
+pie(survival_counts$Freq, 
+    labels = survival_counts$Survived, 
+    main = "Survivors vs. Non-Survivors", 
+    col = c("lightblue", "lightcoral"))
+
+
+pie(class_counts$Freq, 
+    labels = class_counts$Class, 
+    main = "Passengers in Each Class", 
+    col = c("lightblue", "lightgreen", "lightcoral", "lightyellow"))
+
+par(mfrow = c(1, 1))
