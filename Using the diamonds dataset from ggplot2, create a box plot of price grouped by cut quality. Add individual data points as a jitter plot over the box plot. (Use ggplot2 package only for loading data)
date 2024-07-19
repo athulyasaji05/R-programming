@@ -1,0 +1,10 @@
+library(dplyr)
+library(ggplot2)
+boxplot(diamonds$price ~ diamonds$cut, 
+        main = "Box Plot of Price by Cut Quality",
+        xlab = "Cut Quality", 
+        ylab = "Price", 
+        col = "lightblue")
+points(jitter(as.numeric(diamonds$cut)), diamonds$price, 
+       col = rgb(0.2, 0.2, 0.2, 0.4), 
+       pch = 16)
